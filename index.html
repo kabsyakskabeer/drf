@@ -1,1 +1,615 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <title>DRF</title>
+ <style>
+	 body{
+	 	background-color: bisque;
+		    padding: 2%;
+		    color: #0276FF;
+		    
+	      }
+   li {
+     font-size: 15px;
+     margin-bottom: 7px;
+   }
+
+   input,
+   select {
+     width: 90%;
+     height: 30px;
+      
+            border-width:1px;
+            border-style:solid;
+            border-color:#0276FF;
+            background-color: white;
+            border-radius: 10px;
+            
+   }
+   
+   .container {
+    display: flex;
+    justify-content: center;
+    
+     
+   }
+
+
+
+   button {
+     text-align: center;
+     display : block;
+     margin: 0 auto;
+     width: 130px;
+     height: 30px;
+        border-width:1px;
+            border-style:solid;
+            border-color:#0276FF;
+            background-color: white;
+            border-radius: 10px;
+     
+   }
+   h4,h3{
+     margin: auto;
+     text-align: center;
+     
+   }
+   div{
+    
+   }
+ </style>
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/vfs_fonts.js"></script>
+</head>
+
+
+<body>
+  <header>
+    <h3>
+      Jigawa state ministry of health 
+    </h3>
+    <h4>
+      DRF fund valuation statement<br> and monthly report 
+    </h4>
+  </header>
+
+
+
+
+ <ol>
+   <li>
+     <label class="item_lebel">Hospital</label> <br>
+     <select name="pets" id="hospital_name">
+       <option value="">---</option>
+       <option value="Babura GH">G.H Babura</option>
+       <option value="Birniwa GH">G H Birniwa</option>
+       <option value="Birnin kudu GH">G.H Birnin Kudu</option>
+       <option value="parrot">Parrot</option>
+       <option value="spider">Spider</option>
+       <option value="goldfish">Goldfish</option>
+     </select>
+   </li>
+   <li>
+     <label>Reporting period</label> <br>
+     <select name="month" id="reporting_period">
+       <option value=""></option>
+       <option value="January">January</option>
+       <option value="February">February</option>
+       <option value="March">March</option>
+       <option value="April">April</option>
+       <option value="May">May</option>
+       <option value="June">June</option>
+       <option value="July">July</option>
+       <option value="August">August</option>
+       <option value="September">September</option>
+       <option value="October">October</option>
+       <option value="November">November</option>
+       <option value="December">December</option>
+     </select>
+   </li>
+
+
+   <li>
+     <label class="item_lebel">Openingstock balance</label> <br>
+    
+     <input type="number" class="item_amout" id="opening_stock_value">
+   </li>
+
+
+   <li>
+     <label>Physical stock (end of the month)</label> <br>
+     <input id = "stock_value_at_month_end" type="number">
+   </li>
+
+
+   <li>
+     <label>Cash at hand</label> <br>
+     <input id ="cash_at_hand" type="number">
+
+
+   </li>
+    <li>
+     <label>Bank balance</label> <br>
+     <input id="bank_balance" type="number">
+
+
+   </li>
+
+
+   <li>
+     <label>Outstanding payment from S/P</label> <br>
+     <input id="o_service_point" type="number">
+
+
+   </li>
+
+
+   <li>
+
+
+     <label>Outstanding payment from NHIS</label> <br>
+     <input id="o_nhis" type="number">
+
+
+   </li>
+
+
+   <li>
+     <label>Outstanding payment from JICHMA </label> <br>
+     <input id="o_jichma" type="number">
+   </li>
+
+
+   <li>
+     <label>Outstanding payment from D & E </label> <br>
+     <input id="o_de" type="number">
+   </li>
+
+
+   <li>
+     <label>Outstanding payment from BHCPF </label> <br>
+     <input id = "o_bhcpf" type="number">
+   </li>
+
+
+   <li>
+     <label>Outstanding payment (Others)</label> <br>
+     <input id="o_o" type="number">
+   </li>
+   <li>
+         <label class="item_lebel">Is your Hospital enrolled in TSA ?</label> <br>
+     <select name="pets" id="">
+       <option value="true">Yes</option>
+       <option value="false">No</option>
+     
+     </select>
+   </li>
+   <li>
+     <label>Cash sales</label> <br>
+     <input id="cash_sales" type="number">
+   </li>
+
+
+   <li>
+     <text>Payment from NHIS</text> <br>
+     <input type="number">
+   </li>
+
+
+   <li>
+     <label>Payment from JICHMA </label> <br>
+     <input type="number">
+   </li>
+
+
+   <li>
+
+
+     <label>Payment from D & E </label> <br>
+     <input type="number">
+   </li>
+
+
+   <li>
+     <label>Payment from BHCPF </label> <br>
+     <input type="number">
+
+
+   </li>
+   
+
+
+   <li>
+     <label>Payment (Others)</label> <br>
+     <input type="number">
+   </li>
+
+
+   <li>
+     <label>loss and expiry(from the register)</label> <br>
+     <input id="expiry" type="number">
+   </li>
+
+
+   <li>
+     <label>bank charges (from bank statement)</label> <br>
+     <input id ="bank_charges" type="number">
+   </li>
+
+
+   <li>
+     <label>No. of patients that attend the facility</label> <br>
+     <input type="number">
+
+
+   </li>
+
+
+   <li>
+     <label>No. of patients that attend pharmacy</label> <br>
+     <input type="number">
+   </li>
+
+
+   <li>
+     <label>total payment to Jipharma</label> <br>
+     <input type="number">
+   </li>
+       <li>
+     <label>Payment to MOH 4% & 3%</label> <br>
+     <input type="number" id="payment_to_moh">
+
+
+   </li>
+       <li>
+     <label>Payment 3% legitimate expenses</label> <br>
+     <input type="number" id="legitimate_expenses">
+
+
+   </li>
+
+   <li>
+     <label>payment (Others)</label> <br>
+     <input type="number" id="other_payment">
+
+   </li>
+
+
+   <li>
+     <label>reason for other payment above</label> <br>
+     <input type="text">
+
+   </li>
+   <li>
+
+
+     <label>total commodities received from Jipharma (paid & not paid)</label> <br>
+     <input type="number">
+
+
+   </li>
+   <li>
+
+
+     <label>Pharmacist name</label> <br>
+     <input id="pharm" type="text">
+
+
+   </li>
+   <li>
+
+
+     <label>Name of Accountant</label> <br>
+     <input id="acc" type="text">
+
+
+   </li>
+   <li>
+
+     <label>Name of MD.</label> <br>
+     <input id="md" type="text">
+
+   </li>
+
+ </ol>
+<div class="container">
+   <button onclick="statement()">statement</button>
+   <button onclick="report()">report
+   </button>
+</div>
+ 
+
+
+
+ <script>
+ 
+    function statement() {
+     let hospital_name = document.getElementById("hospital_name").value;
+
+     let opening_stock_value = parseInt(document.getElementById("opening_stock_value").value, 10);
+
+
+     let reporting_period = document.getElementById("reporting_period").value + `, ${new Date().getFullYear()}`;
+
+
+     let other_payment = parseFloat(document.getElementById("other_payment").value, 10);
+    
+     let payment_to_moh = parseFloat(document.getElementById("payment_to_moh").value,10);
+    
+     let legitimate_expenses = parseFloat(document.getElementById("legitimate_expenses").value,10);
+
+
+     let bank_charges = parseFloat(document.getElementById("bank_charges").value,10);
+    
+    
+     let expiry = parseFloat(document.getElementById("expiry").value,10);
+    
+
+
+     let cash_out = other_payment + payment_to_moh + legitimate_expenses;
+    
+    
+     let book_value_at_month_end = opening_stock_value - (cash_out + bank_charges + expiry);
+
+
+     let bank_balance = parseFloat(document.getElementById("bank_balance").value);
+
+
+     let cash_at_hand = parseFloat(document.getElementById("cash_at_hand").value);
+
+
+     let o_de = parseFloat(document.getElementById("o_de").value);
+    
+     let o_service_point = parseFloat(document.getElementById("o_service_point").value);
+
+
+     let o_nhis = parseFloat(document.getElementById("o_nhis").value);
+
+
+     let o_jichma =parseFloat(document.getElementById("o_jichma").value);
+
+
+     let o_o = parseFloat(document.getElementById("o_o").value);
+
+
+     let o_bhcpf = parseFloat(document.getElementById("o_bhcpf").value);
+
+
+     let t_o = o_de + o_nhis + o_service_point + o_o + o_jichma + o_bhcpf;
+
+
+
+
+     let stock_value_at_month_end = parseFloat(document.getElementById("stock_value_at_month_end").value);
+
+
+     let tocal_cash_and_stock = stock_value_at_month_end + t_o + bank_balance;
+
+
+     let dif = tocal_cash_and_stock - book_value_at_month_end;
+
+
+     let pharm = document.getElementById("pharm").value;
+
+
+     let acc = document.getElementById("acc").value;
+
+
+     let md = document.getElementById("md").value;
+
+
+    
+     var docDefinition = {
+       pageSize: 'A4',
+
+
+       // by default we use portrait, you can change it to landscape if you wish
+
+
+
+
+       // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
+       pageMargins: [70, 40, 70, 40],
+
+
+       fonts: {
+
+
+         Roboto: {
+           normal: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Regular.ttf',
+           bold: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Medium.ttf',
+           italics: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Italic.ttf',
+           bolditalics: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-MediumItalic.ttf'
+         },
+       },
+
+
+       version: '1.5', // PDF version
+       subset: 'PDF/A-3a', // Subset types: // PDF/A-1, PDF/A-1a, PDF/A-1b, PDF/A-2, PDF/A-2a, PDF/A-2b, PDF/A-3, PDF/A-3a, PDF/A-3b, PDF/UA
+       tagged: true, // Mark document as Tagged PDF
+       displayTitle: true, // Display of document title in window title
+       info: {
+         title: 'Awesome PDF document from pdfmake'
+       },
+
+
+       content: [
+         { text: 'Jigaw State Ministry of health', bold: true, fontSize: 20, alignment: 'center' },
+         {
+           text: 'Fund Valuation Statement ',
+           alignment: 'center',
+           bold: true,
+           fontSize: 18,
+
+
+       },
+
+
+         {
+           text: [
+             {
+               text: 'Hospital:',
+               bold: true,
+               fontSize: 15,
+
+
+       }, `${hospital_name}`
+
+
+       ]
+
+
+       }, {
+           text: [
+             {
+               text: 'Reporting period:',
+               bold: true,
+               fontSize: 15,
+
+
+       }, `${reporting_period}`
+
+
+       ]
+
+
+       },
+
+
+
+
+         {
+
+
+
+
+           table: {
+             width: [1000, 50],
+             body: [
+
+
+           [{ text: 'SECTION A: Book value of fund in sales value ', bold: true, fontSize: 16, font: 'Roboto' }, ''
+
+
+       ],
+         ['A. Book value of fund/Opening balance', `${formatNaira(opening_stock_value)}`],
+
+
+         ['B. Less payment out of fund this month', `${formatNaira(cash_out)}`],
+
+
+         ['C. Less Bank charges as par Bank statement', `${formatNaira(bank_charges)}`],
+
+
+         ['D. Less sales value of loss/Expiry recorded in the register', `${formatNaira(expiry)}`],
+
+
+         ['E. Book value at month end E = A-(B+C+D)', `${formatNaira(book_value_at_month_end)}`],
+         [{ text: 'SECTION B: fund value at month end', bold: true, fontSize: 16 }, ''],
+         ['F. Bank balance at the end of the month', `${formatNaira(bank_balance)}`],
+
+
+         ['G. Cash at hand at the end of the month', `${formatNaira(cash_at_hand)}`],
+
+
+         ['a. Outstanding payment from service point', `${formatNaira(o_service_point)}`],
+
+
+         ['b. Outstanding payment from JICHMA', `${formatNaira(o_jichma)}`],
+
+
+         ['c. Outstanding payment from D&E', `${formatNaira(o_de)}`],
+
+
+         ['d. Outstanding payment from NHIS', `${formatNaira(o_nhis)}`],
+
+
+         ['e. Outstanding payment from others', `${formatNaira(o_o)}`],
+
+
+         ['G. Total Outstanding payments G = a + b + c + d + e', `${formatNaira(t_o)}`],
+
+
+         ['I. Stock value at month end', `${formatNaira(stock_value_at_month_end)}`],
+
+
+         ['J. Actual value at month end (Total cash and stock equivalent)', `${formatNaira(tocal_cash_and_stock)}`],
+
+
+           [{ text: 'SECTION C: Comparisons ', bold: true, fontSize: 16 }, ''],
+
+
+           ['K. Difference between book value and actual value of fund K = J-E.                         ', `${formatNaira(dif)}`]
+       ]
+           }
+
+
+   },
+         { text: 'Notes', italics: true, fontSize: 18, bold: true },
+         {
+           ul: [
+     'If K above is positive, it means the DRF has increased during the month',
+     'If K above is negative, it means the DRF has decreased during the month.',
+     'Any significant increase or decreased must be investigated properly.',
+     'The expiry D above must also be investigated.'
+     ]
+         },
+         {
+           canvas: [
+             { type: 'line', x1: 50, y1: 50, x2: 400, y2: 50, lineWidth: 1, alignment: 'center' }
+               ],
+
+
+     },
+         { text: `${pharm} (HOD. Pharmacy)`, bold: true, margin: [50, 0, 0, 0] },
+         {
+           canvas: [
+             { type: 'line', x1: 50, y1: 50, x2: 400, y2: 50, lineWidth: 1, alignment: 'center' }
+               ],
+
+
+     },
+         { text: `${acc} (Chief Accountant)`, bold: true, margin: [50, 0, 0, 0] },
+         {
+           canvas: [
+             { type: 'line', x1: 50, y1: 50, x2: 400, y2: 50, lineWidth: 1, alignment: 'center' }
+               ],
+
+
+     },
+         { text: `${md} (MD)`, bold: true, margin: [50, 0, 0, 0] },
+ ]
+     };
+
+
+     pdfMake.vfs = pdfMake.vfs;
+     const pdfDoc = pdfMake.createPdf(docDefinition);
+     pdfDoc.download('my_pdf.pdf');
+   }
+
+
+   function formatNaira(number) {
+     return number.toLocaleString('en-NG', {
+       style: 'currency',
+       currency: 'NGN'
+     });
+   }
+ </script>
+</body>
+
+
+</html>
+
+
+
+
+
+
 
