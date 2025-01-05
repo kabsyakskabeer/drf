@@ -29,6 +29,7 @@
             border-color:#0276FF;
             background-color: white;
             border-radius: 10px;
+            color: #0276FF;
             
    }
    
@@ -52,15 +53,24 @@
             border-color:#0276FF;
             background-color: white;
             border-radius: 10px;
+            color: #0276FF;
      
+   }
+   textarea{
+    width: 90%;
+     height: 60px;
+      
+            border-width:1px;
+            border-style:solid;
+            border-color:#0276FF;
+            background-color: white;
+            border-radius: 10px;
+
    }
    h4,h3{
      margin: auto;
      text-align: center;
      
-   }
-   div{
-    
    }
  </style>
 
@@ -87,105 +97,80 @@
    <li>
      <label class="item_lebel">Hospital</label> <br>
      <select name="pets" id="hospital_name">
-       <option value="">---</option>
+       <option value=""></option>
        <option value="Babura GH">G.H Babura</option>
        <option value="Birniwa GH">G H Birniwa</option>
        <option value="Birnin kudu GH">G.H Birnin Kudu</option>
-       <option value="parrot">Parrot</option>
+       <option value="Gwiwa GH">Gwiwa G.H</option>
        <option value="spider">Spider</option>
        <option value="goldfish">Goldfish</option>
      </select>
    </li>
    <li>
      <label>Reporting period</label> <br>
-     <select name="month" id="reporting_period">
-       <option value=""></option>
-       <option value="January">January</option>
-       <option value="February">February</option>
-       <option value="March">March</option>
-       <option value="April">April</option>
-       <option value="May">May</option>
-       <option value="June">June</option>
-       <option value="July">July</option>
-       <option value="August">August</option>
-       <option value="September">September</option>
-       <option value="October">October</option>
-       <option value="November">November</option>
-       <option value="December">December</option>
-     </select>
+
+     <label>From</label> <br>
+     <input id="from" type="date"> <br>
+     <label>To</label> <br>
+     <input id="to" type="date">
    </li>
 
 
    <li>
-     <label class="item_lebel">Openingstock balance</label> <br>
+     <label class="item_lebel">Openings stock balance</label> <br>
     
      <input type="number" class="item_amout" id="opening_stock_value">
    </li>
 
-
+   
    <li>
      <label>Physical stock (end of the month)</label> <br>
      <input id = "stock_value_at_month_end" type="number">
    </li>
 
 
+
    <li>
-     <label>Cash at hand</label> <br>
+     <label>Cash at hand end of the month</label> <br>
      <input id ="cash_at_hand" type="number">
+   </li>
 
-
+    <li>
+     <label>Bank balance end of the month (bank statement)</label> <br>
+     <input id="bank_balance" type="number">
+   </li>
+ 
+   <li>
+     <label>Supplies to S/P</label> <br>
+     <input id="s_service_point" type="number">
+   </li>
+   <li>
+     <label>Supplies to NHIS</label> <br>
+     <input id="s_nhis" type="number">
    </li>
     <li>
-     <label>Bank balance</label> <br>
-     <input id="bank_balance" type="number">
+     <label>Supplies JICHMA</label> <br>
+     <input id="s_jichma" type="number">
+   </li>
 
+   <li>
+     <label>Supplies D & E</label> <br>
+     <input id="s_de" type="number">
+   </li>
+   <li>
+     <label>Supplies to BHCF</label> <br>
+     <input id="s_bhcf" type="number">
+   </li>
 
+   <li>
+     <label>Supplies to Others</label> <br>
+     <input id="s_o" type="number">
    </li>
 
 
    <li>
-     <label>Outstanding payment from S/P</label> <br>
-     <input id="o_service_point" type="number">
-
-
-   </li>
-
-
-   <li>
-
-
-     <label>Outstanding payment from NHIS</label> <br>
-     <input id="o_nhis" type="number">
-
-
-   </li>
-
-
-   <li>
-     <label>Outstanding payment from JICHMA </label> <br>
-     <input id="o_jichma" type="number">
-   </li>
-
-
-   <li>
-     <label>Outstanding payment from D & E </label> <br>
-     <input id="o_de" type="number">
-   </li>
-
-
-   <li>
-     <label>Outstanding payment from BHCPF </label> <br>
-     <input id = "o_bhcpf" type="number">
-   </li>
-
-
-   <li>
-     <label>Outstanding payment (Others)</label> <br>
-     <input id="o_o" type="number">
-   </li>
-   <li>
-         <label class="item_lebel">Is your Hospital enrolled in TSA ?</label> <br>
-     <select name="pets" id="">
+     <label class="item_lebel">Is your Hospital enrolled in TSA ?</label> <br>
+     <select name="pets" id="tsa">
        <option value="true">Yes</option>
        <option value="false">No</option>
      
@@ -196,57 +181,52 @@
      <input id="cash_sales" type="number">
    </li>
 
+   <li>
+     <text>Payment from Service points</text> <br>
+     <input id="p_s" type="number">
+   </li>
+
 
    <li>
      <text>Payment from NHIS</text> <br>
-     <input type="number">
+     <input id="p_nhis" type="number">
    </li>
-
-
    <li>
      <label>Payment from JICHMA </label> <br>
-     <input type="number">
+     <input id="p_jichma" type="number">
    </li>
-
-
    <li>
-
-
      <label>Payment from D & E </label> <br>
-     <input type="number">
+     <input id="p_de" type="number">
    </li>
 
 
    <li>
      <label>Payment from BHCPF </label> <br>
-     <input type="number">
-
-
-   </li>
-   
-
-
+     <input id="p_bhcp" type="number">
+ </li>
+  
    <li>
      <label>Payment (Others)</label> <br>
-     <input type="number">
+     <input id="p_o" type="number">
    </li>
 
 
    <li>
-     <label>loss and expiry(from the register)</label> <br>
+     <label>Loss and expiry(from the register)</label> <br>
      <input id="expiry" type="number">
    </li>
 
 
    <li>
-     <label>bank charges (from bank statement)</label> <br>
+     <label>Bank charges (from bank statement)</label> <br>
      <input id ="bank_charges" type="number">
    </li>
 
 
    <li>
      <label>No. of patients that attend the facility</label> <br>
-     <input type="number">
+     <input id="patients_to_facility" type="number">
 
 
    </li>
@@ -254,47 +234,80 @@
 
    <li>
      <label>No. of patients that attend pharmacy</label> <br>
-     <input type="number">
+     <input id="patient_to_pharmacy" type="number">
    </li>
 
 
    <li>
-     <label>total payment to Jipharma</label> <br>
-     <input type="number">
+     <label>Total payment to Jipharma</label> <br>
+     <input id="payment_jipharma" type="number">
    </li>
-       <li>
+
+   <li>
+     <label>Cheque/transfer no.</label> <br>
+     <input id="payment_jipharma_e" type="number">
+   </li>
+    
+   <li>
      <label>Payment to MOH 4% & 3%</label> <br>
      <input type="number" id="payment_to_moh">
-
-
    </li>
-       <li>
+
+    <li>
+     <label>Cheque/transfer no.</label> <br>
+     <input type="number" id="payment_to_moh_e">
+   </li>
+
+
+   <li>
      <label>Payment 3% legitimate expenses</label> <br>
-     <input type="number" id="legitimate_expenses">
+     <input  type="number" id="legitimate_expenses">
+   </li>
 
+   <li>
+     <label>Cheque/transfer no.</label> <br>
+     <input  type="number" id="legitimate_expenses_e">
+   </li>
+
+   <li>
+     <label>Payment (Others)</label> <br>
+     <input  type="number" id="other_payment">
 
    </li>
 
    <li>
-     <label>payment (Others)</label> <br>
-     <input type="number" id="other_payment">
+     <label>Cheque/transfer no.</label> <br>
+     <input type="number" id="other_payment_e">
 
    </li>
 
 
    <li>
-     <label>reason for other payment above</label> <br>
+     <label>Reason for other payment above</label> <br>
      <input type="text">
 
    </li>
    <li>
-
-
-     <label>total commodities received from Jipharma (paid & not paid)</label> <br>
-     <input type="number">
-
-
+     <label>Total commodities received from Jipharma (paid & not paid)</label> <br>
+     <input id="total_procurement" type="number">
    </li>
+   <li>
+
+
+    <label>Value of uncleared cheques</label> <br>
+    <input id="uncleared_cheques" type="number">
+
+
+  </li>
+  <li>
+
+
+    <label>Comment</label> <br>
+    <textarea id="comment" ></textarea>
+
+
+  </li>
+
    <li>
 
 
@@ -304,12 +317,8 @@
 
    </li>
    <li>
-
-
      <label>Name of Accountant</label> <br>
      <input id="acc" type="text">
-
-
    </li>
    <li>
 
@@ -329,93 +338,118 @@
 
 
  <script>
- 
-    function statement() {
-     let hospital_name = document.getElementById("hospital_name").value;
-
-     let opening_stock_value = parseInt(document.getElementById("opening_stock_value").value, 10);
-
-
-     let reporting_period = document.getElementById("reporting_period").value + `, ${new Date().getFullYear()}`;
-
-
-     let other_payment = parseFloat(document.getElementById("other_payment").value, 10);
-    
-     let payment_to_moh = parseFloat(document.getElementById("payment_to_moh").value,10);
-    
-     let legitimate_expenses = parseFloat(document.getElementById("legitimate_expenses").value,10);
+  function report(){
+    let hospital_name = document.getElementById("hospital_name").value;
+        let opening_stock_value = parseFloat(document.getElementById("opening_stock_value").value, 10);
+        
+        let stock_value_at_month_end = parseFloat(document.getElementById("stock_value_at_month_end").value);
+        const from = document.getElementById("from").value; 
+        const to = document.getElementById("to").value; 
+        let reporting_period = `${from} to ${to}`;
 
 
-     let bank_charges = parseFloat(document.getElementById("bank_charges").value,10);
-    
-    
-     let expiry = parseFloat(document.getElementById("expiry").value,10);
-    
+        let other_payment_e = document.getElementById("other_payment_e").value;
+        let other_payment = getElementValue("other_payment");
+        let payment_to_moh = getElementValue("payment_to_moh");
+        let payment_to_moh_e = document.getElementById("payment_to_moh_e").value;
+        let payment_jipharma = getElementValue("payment_jipharma");
+        let payment_jipharma_e = document.getElementById("payment_jipharma_e").value;
+        let legitimate_expenses = getElementValue("legitimate_expenses");
+        let legitimate_expenses_e = document.getElementById("legitimate_expenses_e").value;
 
 
-     let cash_out = other_payment + payment_to_moh + legitimate_expenses;
-    
-    
-     let book_value_at_month_end = opening_stock_value - (cash_out + bank_charges + expiry);
+        let bank_charges = parseFloat(document.getElementById("bank_charges").value,10);
 
 
-     let bank_balance = parseFloat(document.getElementById("bank_balance").value);
+        let expiry = getElementValue("expiry");
+        
+        let patient_to_pharmacy = document.getElementById('patient_to_pharmacy').value;
+        let patients_to_facility = document.getElementById('patients_to_facility').value;
+
+       
 
 
-     let cash_at_hand = parseFloat(document.getElementById("cash_at_hand").value);
+        
+        let bank_balance = parseFloat(document.getElementById("bank_balance").value);
+        let cash_at_hand = parseFloat(document.getElementById("cash_at_hand").value);
+
+        let cash_sales = parseFloat(document.getElementById('cash_sales').value);
+        let s_nhis = getElementValue("s_nhis");
+        let s_bhcf = parseFloat(document.getElementById('s_bhcf').value);
+        let s_service_point = parseFloat(document.getElementById('s_service_point').value);
+        let s_jichma = parseFloat(document.getElementById('s_jichma').value);
+        let s_o = parseFloat(document.getElementById('s_o').value);
+        let s_de = getElementValue('s_de');
+
+        let Supplies_to_services = s_bhcf + s_jichma + s_nhis + s_service_point + s_o;
+
+        let total_sales = Supplies_to_services + cash_sales + cash_at_hand;
+
+        let p_s = getElementValue("p_s");
+        let p_bhcp = getElementValue("p_bhcp");
+        let p_de = getElementValue("p_de");
+        let p_jichma = getElementValue("p_jichma");
+        let p_o = getElementValue("p_o");
+        let p_nhis = getElementValue("p_nhis");
+        
+        let p_t = p_s + p_nhis + p_bhcp + p_jichma + p_o + p_s;
+
+         let o_de = s_de - p_de;
+         let o_service_point = s_service_point - p_s;
+         let o_nhis = s_nhis - p_nhis;
+         let o_jichma = s_jichma - p_jichma;
+         let o_o = s_o - p_o;
+         let o_bhcpf = s_bhcf - p_bhcp;
+
+      
+        let t_o = o_de + o_nhis + o_service_point + o_o + o_jichma + o_bhcpf;
+
+        
+        let tocal_cash_and_stock = stock_value_at_month_end + t_o + bank_balance + t_o;
+       
+        
+
+        let total_procurement = getElementValue("total_procurement");
+
+        let uncleared_cheques = getElementValue("uncleared_cheques");
+        let procurement_increase = (1.17 * total_procurement) - total_procurement;
+
+        console.log(tsa_deduction(cash_sales));
+
+        // let items =  cash_at_hand 
+        //              + stock_value_at_month_end
+        //              + total_sales
+        //              + procurement_increase;
+
+        // let cash_out = other_payment 
+        //               + percentage(total_sales,10) 
+        //               + tsa_deduction(cash_at_hand,cash_sales)
+        //               + expiry
+        //               + jipharma_debt(total_procurement,payment_jipharma)
+        //               + bank_charges;
+
+         let cash_out2 =  
+                      + percentage(total_sales,10) 
+                      + tsa_deduction(cash_at_hand,cash_sales)
+                      + other_payment;         
 
 
-     let o_de = parseFloat(document.getElementById("o_de").value);
-    
-     let o_service_point = parseFloat(document.getElementById("o_service_point").value);
+         let actual_value_at_the_begining =  opening_stock_value -cash_out2;
+         let book_value_at_month_end = actual_value_at_the_begining + procurement_increase; 
+
+         let dif =  book_value_at_month_end - actual_value_at_the_begining;       
+
+        let pharm = document.getElementById("pharm").value;
+
+        let comment = document.getElementById("comment").value;
+        let acc = document.getElementById("acc").value;
 
 
-     let o_nhis = parseFloat(document.getElementById("o_nhis").value);
+        let md = document.getElementById("md").value;
 
 
-     let o_jichma =parseFloat(document.getElementById("o_jichma").value);
-
-
-     let o_o = parseFloat(document.getElementById("o_o").value);
-
-
-     let o_bhcpf = parseFloat(document.getElementById("o_bhcpf").value);
-
-
-     let t_o = o_de + o_nhis + o_service_point + o_o + o_jichma + o_bhcpf;
-
-
-
-
-     let stock_value_at_month_end = parseFloat(document.getElementById("stock_value_at_month_end").value);
-
-
-     let tocal_cash_and_stock = stock_value_at_month_end + t_o + bank_balance;
-
-
-     let dif = tocal_cash_and_stock - book_value_at_month_end;
-
-
-     let pharm = document.getElementById("pharm").value;
-
-
-     let acc = document.getElementById("acc").value;
-
-
-     let md = document.getElementById("md").value;
-
-
-    
-     var docDefinition = {
+        var docDefinition = {
        pageSize: 'A4',
-
-
-       // by default we use portrait, you can change it to landscape if you wish
-
-
-
-
-       // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
        pageMargins: [70, 40, 70, 40],
 
 
@@ -436,7 +470,341 @@
        tagged: true, // Mark document as Tagged PDF
        displayTitle: true, // Display of document title in window title
        info: {
-         title: 'Awesome PDF document from pdfmake'
+         title: 'kpdf'
+       },
+
+
+       content: [
+         { text: 'Jigaw State Ministry of health', bold: true, fontSize: 18, alignment: 'center' },
+         {
+           text: 'Monthly DRF Report',
+           alignment: 'center',
+           bold: true,
+           fontSize: 16,
+
+
+       },
+
+       {
+           text: [
+             {
+               text: 'Hospital:',
+               bold: true,
+               fontSize: 15,
+
+
+       }, `${hospital_name}`
+
+
+      ]
+
+
+      },
+      {
+        text: [
+          { text: 'Reporting period:', bold: true, fontSize: 15,}, `${reporting_period}`  
+      ]
+
+
+      },
+    
+       //BEGINIG OF TABLE
+
+      { //table start
+table: {
+  width: [20,950,50,50],
+  body: [
+    ["",{
+        text: `SECTION A: Closing DRF Records for the month `,bold: true
+      },"Opening","Remark"],
+
+["1",'Total physical stock value' ,`${formatNaira(stock_value_at_month_end)}`,""],
+["2","Bank Balance",`${formatNaira(bank_balance)}`,""],
+
+["3","Cash at hand",`${formatNaira(cash_at_hand)}`,""],
+
+["4.a","Outstanding payment from S/P",`${formatNaira(o_service_point)}`,""],
+["4.b","Outstanding payment from NHIS",`${formatNaira(o_nhis)}`,""],
+["4.c","Outstanding payment from JICHMA",`${formatNaira(o_jichma)}`,""],
+["4.d","Outstanding payment from D&E",`${formatNaira(o_de)}`,""],
+["4.e","Outstanding payment from BHCF",`${formatNaira(o_bhcpf)}`,""],
+["4.f","Outstanding payment from Others",`${formatNaira(o_o)}`,""],
+["5","Actual fund value",`${formatNaira(actual_value_at_the_begining)}`,""],
+]
+}
+}, //table end
+
+{
+  table:{
+    width: [20,950,50],
+    body :[
+      ["",{ text: 'SECTION B: Summary of month activities', bold: true},""],
+      ["1","Total procurement within the month at transfer price",`${formatNaira(total_procurement)}`],
+      ["2","Total sales for the month (including service points)",`${formatNaira(total_sales)}`],
+      ["","Supplies to service points and programs within the month",""],
+      ["","a) Supplies to service points",`${formatNaira(s_service_point)}`],
+      ["","b) Supplies to NHIS",`${formatNaira(s_nhis)}`],
+      ["","c) Supplies to JICHMA",`${formatNaira(s_jichma)}`],
+      ["","d) Supplies to D & E",`${formatNaira(s_de)}`],
+      ["","e) Supplies to BHCP",`${formatNaira(s_bhcf)}`],
+      ["","f) Supplies to Others",`${formatNaira(s_o)}`],
+      ["3","Total supplies (a + b + c + d + e + f)",`${formatNaira(Supplies_to_services)}`],
+      [""," Payments from service points and programs within the month",""],
+      ["","a) Payment from service points",`${formatNaira(p_s)}`],
+      ["","b) Payment from NHIS",`${formatNaira(p_nhis)}`],
+      ["","c) Payment from JICHMA",`${formatNaira(p_jichma)}`],
+      ["","d) Payment from D & E",`${formatNaira(p_de)}`],
+      ["","e) Payment from BHCP",`${formatNaira(p_bhcp)}`],
+      ["","f) Payment from Others",`${formatNaira(p_o)}`],
+      ["4","Total supplies (a + b + c + d + e + f)",`${formatNaira(p_t)}`],
+      ["5", "Unavoidable loss and expiry",`${formatNaira(expiry)}`,],
+      ["6","Bank charges as par Bank statement",`${formatNaira(bank_charges)}`],
+      ["7","Total number of patients that visit the facility",`${patients_to_facility}`],
+      ["8","Total number of patients that visit the pharmacy",`${patient_to_pharmacy}`],
+      
+    ]
+
+  }
+  
+},
+{text:'',pageBreak:'after'},
+{
+  table:{ 
+    width:[20,800,50,50],
+    body:[
+    ["9",{text:"Cheques raised during the month",bold:true,},{text:"Cheques/Transfer ref No.",bold:true},{text:"Amount",bold:true}],
+    ["","a). Payment to Jipharma",`${payment_jipharma_e}`,`${formatNaira(payment_jipharma)}`],
+    ["","b). Payment to MOH 3% & 4%",`${payment_to_moh_e}`,`${formatNaira(payment_to_moh)}`],
+    ["","c). Legitmate expenses 3%",`${legitimate_expenses_e}`,`${formatNaira(legitimate_expenses)}`],
+    ["","d). Other payments ",`${other_payment_e}`,`${formatNaira(other_payment)}`],
+    ["10",{text: "Mark up elements within the month", bold: true},"","17%"],
+    ["a)","1% Loss and expiry","--",`${formatNaira(percentage(total_sales,1))}`],
+    ["b)","4% Monitoring and evaluation","--",`${formatNaira(percentage(total_sales,4))}`],
+    ["c)","4% Inflation","--",`${formatNaira(percentage(total_sales,4))}`],
+    ["d)","3% D&E","--",`${formatNaira(percentage(total_sales,3))}`],
+    ["e)","3% Legitimate expenses","--",`${formatNaira(percentage(total_sales,3))}`],
+    ["f)","TSA Deductions","--",`${formatNaira(tsa_deduction(cash_at_hand,cash_sales))}`],
+    ["11","Debt from jipharma","--",`${formatNaira(jipharma_debt(total_procurement,payment_jipharma))}`],
+    ["12","Value of uncleared cheques","---",`${formatNaira(uncleared_cheques)}`]
+    ]
+  }
+},
+{text:"Comments:", bold:true},`${comment}`,
+{
+           canvas: [
+             { type: 'line', x1: 20, y1: 50, x2: 400, y2: 50, lineWidth: 1, alignment: 'center' }
+               ],
+
+
+     },
+         { text: `${pharm} (HOD. Pharmacy)`, bold: true, margin: [50, 0, 0, 0] },
+         {
+           canvas: [
+             { type: 'line', x1: 20, y1: 50, x2: 400, y2: 50, lineWidth: 1, alignment: 'center' }
+               ],
+
+
+     },
+         { text: `${acc} (Chief Accountant)`, bold: true, margin: [50, 0, 0, 0] },
+         {
+           canvas: [
+             { type: 'line', x1: 20, y1: 50, x2: 400, y2: 50, lineWidth: 1, alignment: 'center' }
+               ],
+
+
+     },
+         { text: `${md} (MD)`, bold: true, margin: [50, 0, 0, 0] },
+ 
+
+
+]
+
+};
+
+      pdfMake.vfs = pdfMake.vfs;
+     const pdfDoc = pdfMake.createPdf(docDefinition);
+     pdfDoc.download(`DRF Report for ${reporting_period}`);
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    function statement() {
+     
+        let hospital_name = document.getElementById("hospital_name").value;
+        let opening_stock_value = parseFloat(document.getElementById("opening_stock_value").value, 10);
+        
+        let stock_value_at_month_end = parseFloat(document.getElementById("stock_value_at_month_end").value);
+        const from = document.getElementById("from").value; 
+        const to = document.getElementById("to").value; 
+        let reporting_period = `${from} to ${to}`;
+
+
+        let other_payment_e = document.getElementById("other_payment_e").value;
+        let other_payment = getElementValue("other_payment");
+        let payment_to_moh = getElementValue("payment_to_moh");
+        let payment_to_moh_e = document.getElementById("payment_to_moh_e").value;
+        let payment_jipharma = getElementValue("payment_jipharma");
+        let payment_jipharma_e = document.getElementById("payment_jipharma_e").value;
+        let legitimate_expenses = getElementValue("legitimate_expenses");
+        let legitimate_expenses_e = document.getElementById("legitimate_expenses_e").value;
+
+
+        let bank_charges = parseFloat(document.getElementById("bank_charges").value,10);
+
+
+        let expiry = getElementValue("expiry");
+        
+        let patient_to_pharmacy = document.getElementById('patient_to_pharmacy').value;
+        let patients_to_facility = document.getElementById('patients_to_facility').value;
+
+       
+
+
+        
+        let bank_balance = parseFloat(document.getElementById("bank_balance").value);
+        let cash_at_hand = parseFloat(document.getElementById("cash_at_hand").value);
+
+        let cash_sales = parseFloat(document.getElementById('cash_sales').value);
+        let s_nhis = getElementValue("s_nhis");
+        let s_bhcf = parseFloat(document.getElementById('s_bhcf').value);
+        let s_service_point = parseFloat(document.getElementById('s_service_point').value);
+        let s_jichma = parseFloat(document.getElementById('s_jichma').value);
+        let s_o = parseFloat(document.getElementById('s_o').value);
+        let s_de = getElementValue('s_de');
+
+        let Supplies_to_services = s_bhcf + s_jichma + s_nhis + s_service_point + s_o;
+
+        let total_sales = Supplies_to_services + cash_sales + cash_at_hand;
+
+        let p_s = getElementValue("p_s");
+        let p_bhcp = getElementValue("p_bhcp");
+        let p_de = getElementValue("p_de");
+        let p_jichma = getElementValue("p_jichma");
+        let p_o = getElementValue("p_o");
+        let p_nhis = getElementValue("p_nhis");
+        
+        let p_t = p_s + p_nhis + p_bhcp + p_jichma + p_o + p_s;
+
+         let o_de = s_de - p_de;
+         let o_service_point = s_service_point - p_s;
+         let o_nhis = s_nhis - p_nhis;
+         let o_jichma = s_jichma - p_jichma;
+         let o_o = s_o - p_o;
+         let o_bhcpf = s_bhcf - p_bhcp;
+
+      
+        let t_o = o_de + o_nhis + o_service_point + o_o + o_jichma + o_bhcpf;
+
+        
+        let tocal_cash_and_stock = stock_value_at_month_end + t_o + bank_balance + t_o;
+       
+        
+
+        let total_procurement = getElementValue("total_procurement");
+
+        let uncleared_cheques = getElementValue("uncleared_cheques");
+        let procurement_increase = (1.17 * total_procurement) - total_procurement;
+
+        console.log(tsa_deduction(cash_sales));
+
+        // let items =  cash_at_hand 
+        //              + stock_value_at_month_end
+        //              + total_sales
+        //              + procurement_increase;
+
+        // let cash_out = other_payment 
+        //               + percentage(total_sales,10) 
+        //               + tsa_deduction(cash_at_hand,cash_sales)
+        //               + expiry
+        //               + jipharma_debt(total_procurement,payment_jipharma)
+        //               + bank_charges;
+
+         let cash_out2 =  
+                      + percentage(total_sales,10) 
+                      + tsa_deduction(cash_at_hand,cash_sales)
+                      + other_payment;         
+
+
+         let actual_value_at_the_begining =  opening_stock_value -cash_out2;
+         let book_value_at_month_end = actual_value_at_the_begining + procurement_increase; 
+
+         let dif =  book_value_at_month_end - actual_value_at_the_begining;       
+
+        let pharm = document.getElementById("pharm").value;
+
+        let comment = document.getElementById("comment").value;
+        let acc = document.getElementById("acc").value;
+
+
+        let md = document.getElementById("md").value;
+
+
+
+
+    
+     var docDefinition = {
+       pageSize: 'A4',
+       pageMargins: [70, 40, 70, 40],
+
+
+       fonts: {
+
+
+         Roboto: {
+           normal: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Regular.ttf',
+           bold: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Medium.ttf',
+           italics: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Italic.ttf',
+           bolditalics: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-MediumItalic.ttf'
+         },
+       },
+
+
+       version: '1.5', // PDF version
+       subset: 'PDF/A-3a', // Subset types: // PDF/A-1, PDF/A-1a, PDF/A-1b, PDF/A-2, PDF/A-2a, PDF/A-2b, PDF/A-3, PDF/A-3a, PDF/A-3b, PDF/UA
+       tagged: true, // Mark document as Tagged PDF
+       displayTitle: true, // Display of document title in window title
+       info: {
+         title: 'kpdf'
        },
 
 
@@ -483,74 +851,63 @@
        },
 
 
-
-
          {
 
 
 
 
            table: {
-             width: [1000, 50],
+             width: [10,1000, 50],
              body: [
 
 
-           [{ text: 'SECTION A: Book value of fund in sales value ', bold: true, fontSize: 16, font: 'Roboto' }, ''
+           ["",{ text: 'SECTION A: Book value of fund in sales value ', bold: true, fontSize: 16, font: 'Roboto' }, ''],
+         ["A",' Book value of fund/Opening balance', `${formatNaira(opening_stock_value)}`],
 
 
-       ],
-         ['A. Book value of fund/Opening balance', `${formatNaira(opening_stock_value)}`],
+         ["B",' Less payment out of fund this month', `${formatNaira(cash_out2)}`],
 
 
-         ['B. Less payment out of fund this month', `${formatNaira(cash_out)}`],
+         ["C",' Less Bank charges as par Bank statement', `${formatNaira(bank_charges)}`],
 
 
-         ['C. Less Bank charges as par Bank statement', `${formatNaira(bank_charges)}`],
+         ["D",' Less sales value of loss/Expiry recorded in the register', `${formatNaira(expiry)}`],
 
 
-         ['D. Less sales value of loss/Expiry recorded in the register', `${formatNaira(expiry)}`],
+         ["E",' Book value at month end E = A-(B+C+D)', `${formatNaira(actual_value_at_the_begining)}`],
+         ["",{ text: 'SECTION B: fund value at month end', bold: true, fontSize: 16 }, ''],
+         ["F",' Bank balance at the end of the month', `${formatNaira(bank_balance)}`],
 
 
-         ['E. Book value at month end E = A-(B+C+D)', `${formatNaira(book_value_at_month_end)}`],
-         [{ text: 'SECTION B: fund value at month end', bold: true, fontSize: 16 }, ''],
-         ['F. Bank balance at the end of the month', `${formatNaira(bank_balance)}`],
+         ["G",' Cash at hand at the end of the month', `${formatNaira(cash_at_hand)}`],
 
 
-         ['G. Cash at hand at the end of the month', `${formatNaira(cash_at_hand)}`],
+         ["",'a. Outstanding payment from service point', `${formatNaira(o_service_point)}`],
 
 
-         ['a. Outstanding payment from service point', `${formatNaira(o_service_point)}`],
+         ["",'b. Outstanding payment from JICHMA', `${formatNaira(o_jichma)}`],
 
 
-         ['b. Outstanding payment from JICHMA', `${formatNaira(o_jichma)}`],
+         ["",'c. Outstanding payment from D&E', `${formatNaira(o_de)}`],
 
 
-         ['c. Outstanding payment from D&E', `${formatNaira(o_de)}`],
+         ["",'d. Outstanding payment from NHIS', `${formatNaira(o_nhis)}`],
 
 
-         ['d. Outstanding payment from NHIS', `${formatNaira(o_nhis)}`],
+         ["",'e. Outstanding payment from others', `${formatNaira(o_o)}`],
 
 
-         ['e. Outstanding payment from others', `${formatNaira(o_o)}`],
+         ["H",' Total Outstanding payments G = a + b + c + d + e', `${formatNaira(t_o)}`],
 
 
-         ['G. Total Outstanding payments G = a + b + c + d + e', `${formatNaira(t_o)}`],
+         ["I",' Stock value at month end', `${formatNaira(stock_value_at_month_end)}`],
 
 
-         ['I. Stock value at month end', `${formatNaira(stock_value_at_month_end)}`],
-
-
-         ['J. Actual value at month end (Total cash and stock equivalent)', `${formatNaira(tocal_cash_and_stock)}`],
-
-
-           [{ text: 'SECTION C: Comparisons ', bold: true, fontSize: 16 }, ''],
-
-
-           ['K. Difference between book value and actual value of fund K = J-E.                         ', `${formatNaira(dif)}`]
+         ["J",' Actual value at month end (Total cash and stock equivalent)', `${formatNaira(book_value_at_month_end)}`],
+           ["",{ text: 'SECTION C: Comparisons ', bold: true, fontSize: 16 }, ''],
+           ["K",' Difference between book value and actual value of fund K = J-E.', `${formatNaira(dif)}`]
        ]
-           }
-
-
+          }
    },
          { text: 'Notes', italics: true, fontSize: 18, bold: true },
          {
@@ -591,7 +948,7 @@
 
      pdfMake.vfs = pdfMake.vfs;
      const pdfDoc = pdfMake.createPdf(docDefinition);
-     pdfDoc.download('my_pdf.pdf');
+     pdfDoc.download(`DRF fund valuation for ${reporting_period}`);
    }
 
 
@@ -601,15 +958,28 @@
        currency: 'NGN'
      });
    }
+
+   function getElementValue(id){
+    return parseFloat(document.getElementById(id).value);
+   }
+   function percentage(total_sales,parcent){
+   return (total_sales / 117) * parcent;
+  
+     
+   }
+  
+   function tsa_deduction(cash_sales){
+    let result = cash_sales/10;
+    if(document.getElementById("tsa").value == "true"){
+      return result;
+    }else{
+      return 0;
+    }
+    
+   }
+   function jipharma_debt(t_item,p_items){
+      return t_item - p_items;
+   }
  </script>
 </body>
-
-
 </html>
-
-
-
-
-
-
-
