@@ -947,7 +947,16 @@ footer: function(currentPage, pageCount) {
 
      },
          { text: `${md} (MD)`, bold: true, margin: [50, 0, 0, 0] },
- ]
+ ],
+	     footer: function(currentPage, pageCount) {
+                    return {
+                        columns: [
+                        { text: 'Made with Jigawa DRF tools', link: 'https://kabsyakskabeer.github.io/drf/', color: 'green', decoration: 'underline' },
+                          
+                        ],
+                        margin: [40, 0]
+                    };
+                }
      };
 
 
