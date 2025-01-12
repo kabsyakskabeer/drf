@@ -96,15 +96,7 @@
  <ol>
    <li>
      <label class="item_lebel">Hospital</label> <br>
-     <select name="pets" id="hospital_name">
-       <option value=""></option>
-       <option value="Babura GH">G.H Babura</option>
-       <option value="Birniwa GH">G H Birniwa</option>
-       <option value="Birnin kudu GH">G.H Birnin Kudu</option>
-       <option value="Gwiwa GH">Gwiwa G.H</option>
-       <option value="spider">Spider</option>
-       <option value="goldfish">Goldfish</option>
-     </select>
+     <input id="hospital_name" type="text"> <br>
    </li>
    <li>
      <label>Reporting period</label> <br>
@@ -343,10 +335,9 @@
         let opening_stock_value = parseFloat(document.getElementById("opening_stock_value").value, 10);
         
         let stock_value_at_month_end = parseFloat(document.getElementById("stock_value_at_month_end").value);
-        const from = document.getElementById("from").value; 
-        const to = document.getElementById("to").value; 
+        const from = nigerDateFormat('from')//document.getElementById("from").value; 
+        const to = nigerDateFormat('to');//document.getElementById("to").value; 
         let reporting_period = `${from} to ${to}`;
-
 
         let other_payment_e = document.getElementById("other_payment_e").value;
         let other_payment = getElementValue("other_payment");
@@ -470,7 +461,7 @@
        tagged: true, // Mark document as Tagged PDF
        displayTitle: true, // Display of document title in window title
        info: {
-         title: 'kpdf'
+         title: 'Jigawa State DRF'
        },
 
 
@@ -614,10 +605,21 @@ table: {
 
      },
          { text: `${md} (MD)`, bold: true, margin: [50, 0, 0, 0] },
+
  
 
 
-]
+],
+footer: function(currentPage, pageCount) {
+                    return {
+                        columns: [
+                        { text: 'Made with Jigawa DRF tools', link: 'https://kabsyakskabeer.github.io/drf/', color: 'green', decoration: 'underline' },
+                          
+                        ],
+                        margin: [40, 0]
+                    };
+                }
+
 
 };
 
@@ -674,8 +676,11 @@ table: {
         let opening_stock_value = parseFloat(document.getElementById("opening_stock_value").value, 10);
         
         let stock_value_at_month_end = parseFloat(document.getElementById("stock_value_at_month_end").value);
-        const from = document.getElementById("from").value; 
-        const to = document.getElementById("to").value; 
+        // const from = document.getElementById("from").value; 
+        // const to = document.getElementById("to").value; 
+        // let reporting_period = `${nigerDateFormat(from)} to ${nigerDateFormat(to)}}`;
+        const from = nigerDateFormat('from')//document.getElementById("from").value; 
+        const to = nigerDateFormat('to');//document.getElementById("to").value; 
         let reporting_period = `${from} to ${to}`;
 
 
@@ -804,7 +809,7 @@ table: {
        tagged: true, // Mark document as Tagged PDF
        displayTitle: true, // Display of document title in window title
        info: {
-         title: 'kpdf'
+         title: 'Jigawa state DRF fund valuation statement'
        },
 
 
@@ -980,6 +985,23 @@ table: {
    function jipharma_debt(t_item,p_items){
       return t_item - p_items;
    }
+
+ function nigerDateFormat(date_input_id) {
+    // Get the date input element
+    const dateInput = document.getElementById(date_input_id).value;
+    
+   
+    
+    if (dateInput) {
+        const [year, month, day] = dateInput.split('-');
+ 
+        const formattedDate = `${day}/${month}/${year}`;
+        return formattedDate;
+    } else {
+    return  'not selected';
+        
+    }
+}
  </script>
 </body>
 </html>
